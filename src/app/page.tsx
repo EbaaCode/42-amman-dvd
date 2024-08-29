@@ -24,7 +24,7 @@ const DvdScreen = () => {
 			if (dvdRef.current) {
 				const hRange = window.innerWidth - dvdRef.current.clientWidth
 				const vRange = window.innerHeight - dvdRef.current.clientHeight
-				const time = performance.now() * 0.36
+				const time = performance.now() * 0.15
 				const x = Math.abs((time % (hRange * 2)) - hRange)
 				const y = Math.abs((time % (vRange * 2)) - vRange)
 
