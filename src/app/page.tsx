@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from 'react'
 import Confetti from 'react-confetti'
 
 const DvdScreen = () => {
-	const [color, setColor] = useState('white')
+	const [color, setColor] = useState('black')
 	const [showConfetti, setShowConfetti] = useState(false)
 	const [numberOfPieces, setNumberOfPieces] = useState(0)
 	const hitEdgeRef = useRef(false)
 	const hitCornerRef = useRef(false)
 	const dvdRef = useRef<SVGSVGElement>(null)
 
-	const colors = ['white', '#06f8aa', '#01bbbc', '#172db4', '#9836ad', '#f7af1f']
+	const colors = ['black', '#06f8aa', '#01bbbc', '#172db4', '#9836ad', '#f7af1f']
 	let colorIndex = 0
 
 	const getNextColor = () => {
@@ -24,7 +24,7 @@ const DvdScreen = () => {
 			if (dvdRef.current) {
 				const hRange = window.innerWidth - dvdRef.current.clientWidth
 				const vRange = window.innerHeight - dvdRef.current.clientHeight
-				const time = performance.now() * 1
+				const time = performance.now() * 0.36
 				const x = Math.abs((time % (hRange * 2)) - hRange)
 				const y = Math.abs((time % (vRange * 2)) - vRange)
 
@@ -73,7 +73,7 @@ const DvdScreen = () => {
 					style={{ pointerEvents: 'none' }}
 				/>
 			)}
-			<svg ref={dvdRef} className="absolute" width="120" height="120" viewBox="0 -200 960 960" style={{ filter: `drop-shadow(0 0 20px ${color})` }}>
+			<svg ref={dvdRef} className="absolute" width="120" height="120" viewBox="0 -200 960 960">
 				<g fill={color}>
 					<polygon points="32,412.6 362.1,412.6 362.1,578 526.8,578 526.8,279.1 197.3,279.1 526.8,-51.1 362.1,-51.1 32,279.1 " />
 					<polygon points="597.9,114.2 762.7,-51.1 597.9,-51.1 " />
