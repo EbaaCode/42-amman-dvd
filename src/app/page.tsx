@@ -24,14 +24,14 @@ const DvdScreen = () => {
 			if (dvdRef.current) {
 				const hRange = window.innerWidth - dvdRef.current.clientWidth
 				const vRange = window.innerHeight - dvdRef.current.clientHeight
-				const time = performance.now() * 0.15
+				const time = performance.now() * 1
 				const x = Math.abs((time % (hRange * 2)) - hRange)
 				const y = Math.abs((time % (vRange * 2)) - vRange)
 
 				dvdRef.current.style.left = `${x}px`
 				dvdRef.current.style.top = `${y}px`
 				const padding = 20
-				const cornerPadding = 10
+				const cornerPadding = 5
 				const isInCorner = (x <= cornerPadding || x >= hRange - cornerPadding) && (y <= cornerPadding || y >= vRange - cornerPadding)
 				const isInEdge = x <= padding || x >= hRange - padding || y <= padding || y >= vRange - padding
 
@@ -73,7 +73,7 @@ const DvdScreen = () => {
 					style={{ pointerEvents: 'none' }}
 				/>
 			)}
-			<svg ref={dvdRef} className="absolute" width="120" height="120" viewBox="0 -200 960 960" style={{ filter: `drop-shadow(0 0 40px ${color})` }}>
+			<svg ref={dvdRef} className="absolute" width="120" height="120" viewBox="0 -200 960 960" style={{ filter: `drop-shadow(0 0 20px ${color})` }}>
 				<g fill={color}>
 					<polygon points="32,412.6 362.1,412.6 362.1,578 526.8,578 526.8,279.1 197.3,279.1 526.8,-51.1 362.1,-51.1 32,279.1 " />
 					<polygon points="597.9,114.2 762.7,-51.1 597.9,-51.1 " />

@@ -19,7 +19,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<div className="relative">
 					{children}
-					<p className="text-white/20 absolute bottom-0 left-1/2 transform -translate-x-1/2 py-5 text-sm text-center  ">(Made with ❤️ and ChatGBT by Ebaa)</p>
+					<p className="text-white/20 absolute bottom-0 left-1/2 transform -translate-x-1/2 py-5 text-sm text-center  ">(Made with ❤️ by Ebaa)</p>
 				</div>
 			</body>
 		</html>
